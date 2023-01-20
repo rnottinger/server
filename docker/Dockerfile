@@ -1,6 +1,6 @@
 FROM php:8.1-fpm-alpine3.17
 
-LABEL maintainer="richard.ottinger@eastexcrude.com"
+LABEL maintainer="your-email@example.com"
 
 #RUN apk update \
 #    && apk add --no-cache bash wget autoconf \
