@@ -23,3 +23,6 @@ use Illuminate\Support\Facades\Route;
 //    return 'hello world';
 //});
 Route::get('/', [UserController::class, 'index']);
+
+// we need to access this route when we are logged in
+Route::get('/user', [UserController::class, 'user'])->middleware('auth:api');

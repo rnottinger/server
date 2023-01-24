@@ -12,4 +12,9 @@ class UserController extends Controller
 //        return 'hello world legit';
         return User::all();
     }
+
+    public function user(Request $request)
+    {
+        return $request->user();
+    }
 }
