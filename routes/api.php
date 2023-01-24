@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::get('/', function () {
-    return 'hello world';
-});
+//Route::get('/', function () {
+//    return 'hello world';
+//});
+Route::get('/', [UserController::class, 'index']);
