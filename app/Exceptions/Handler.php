@@ -44,7 +44,12 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
+        /**
+         * Register the renderable callback to return json response instead of an html response when there is an error
+         */
         $this->renderable(function (Throwable $e, $request) {
+
+            // if the request is an api request and the exception is a validation exception
             if ($e instanceof ValidationException) {
                 return response()->json([
                     'message' => $e->getMessage(),
@@ -61,6 +66,9 @@ class Handler extends ExceptionHandler
             ], $e->getCode() ?: 400);
         });
 
+        /**
+         * Register the reportable callback to report the exception to the appropriate log channel.
+         */
         $this->reportable(function (Throwable $e) {
             //
         });
